@@ -1,4 +1,4 @@
-
+  
 #include <SoftwareSerial.h>
 #include <Wire.h>
 #include "ds3231.h"
@@ -105,6 +105,7 @@ void loop() {
   }
   if (shouldTurnOff(&state)) {
     state.ringing = false;
+    state.someStateChanged = true;
   }
   ringTheAlarm(&state);
 }
